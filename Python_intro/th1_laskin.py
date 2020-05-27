@@ -1,23 +1,27 @@
-# rekursiivinen kertoma funktio, sisään kokonaisluku joka suurempi kuin 1, ulos luku
-def kertoma(num):
-    if num == 0:
-        return 1
-    else:
-        return num*kertoma(num-1)
-
 def main():
-    luku = str(input("Anna luku josta haluat laskea kertoman: "))
+    # ekan luvun syöttö ja tarkistus
+    luku1 = input("Anna ensimmainen luku: ")
+    try:
+        luku1 = int(luku1)
+    except:
+        print("Syöte ei ollut numero")
+        return
 
-        try int(luku)
-            if luku < 0:
-                print("Kertomaa ei voi laskea negatiivisesta luvusta")
-                return
-            vastaus = kertoma(luku)
+    # syötteen kommentointi
+    if luku1 < 50:
+        print(str(luku1) + " oli pienempi kuin 50")
+    else:
+        print(str(luku1) + " oli suurempit tai yhtäsuuri kuin 50")
 
-            print(str(luku) + "! = " + str(vastaus))
-            
-        except Exception:
-            print("Syöte ei ollut kokonais luku")
+    # toisen luvun syöttö ja tarkistus
+    luku2 = input("Anna toinen luku: ")
+    try:
+        luku2 = int(luku2)
+    except:
+        print("Syöte ei ollut numero")
+        return
+    
+    # lopputulema
+    print("Tulos on:\n" + str(luku1+luku2))
 
-if __name__=="__main__":
-    main()
+main()
