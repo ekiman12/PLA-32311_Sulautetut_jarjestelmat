@@ -1,9 +1,9 @@
 # rekursiivinen kertoma funktio, sisään kokonaisluku joka suurempi kuin 1, ulos luku
-def kertoma(num):
+def kertoma(num, perse=1):
     if num == 0:
-        return 1
+        return perse
     else:
-        return num*kertoma(num-1)
+        return kertoma(num-1, num*perse)
 
 def main():
     luku = str(input("Anna luku josta haluat laskea kertoman: "))
