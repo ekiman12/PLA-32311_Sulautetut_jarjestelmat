@@ -1,2 +1,6 @@
 *.vscode
 testi*
+Debug/*
+.cproject
+.project
+.settings/*
